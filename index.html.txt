@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MaxProVdk | Авто из Китая и Японии</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#1a1a1a;
+color:#e5e5e5;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 20px;
+background:#1f1f1f;
+border-bottom:1px solid #555;
+z-index:1000;
+}
+
+.logo{
+font-weight:bold;
+color:#c0c0c0;
+font-size:18px;
+}
+
+nav a{
+color:white;
+margin-left:14px;
+text-decoration:none;
+font-size:13px;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),
+url(hero.jpg);
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 20px;
+}
+
+.hero h1{
+font-size:34px;
+max-width:500px;
+background:linear-gradient(90deg,#fff,#c0c0c0);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+margin-top:15px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 26px;
+background:#c40000;
+border-radius:8px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SECTIONS */
+
+.section{
+padding:70px 20px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.card{
+background:#262626;
+border-radius:10px;
+overflow:hidden;
+border:1px solid #555;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+cursor:pointer;
+}
+
+.card-body{
+padding:16px;
+}
+
+.price{
+color:#ff2a2a;
+font-weight:bold;
+}
+
+/* CAROUSEL */
+
+.carousel{
+position:relative;
+}
+
+.carousel button{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.5);
+border:none;
+color:white;
+font-size:20px;
+padding:4px 10px;
+}
+
+.prev{left:5px;}
+.next{right:5px;}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+/* TELEGRAM */
+
+.telegram{
+position:fixed;
+right:18px;
+bottom:18px;
+background:#c40000;
+padding:14px 18px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px 20px;
+background:#141414;
+border-top:1px solid #444;
+}
+
+/* DESKTOP */
+
+@media(min-width:768px){
+
+.cards{
+grid-template-columns:repeat(3,1fr);
+}
+
+.hero h1{
+font-size:46px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">MaxProVdk</div>
+
+<nav>
+<a href="#about">О нас</a>
+<a href="#orders">Заказы</a>
+<a href="#offers">Авто на заказ</a>
+<a href="#reviews">Отзывы</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>Авто из Китая и Японии под ключ</h1>
+
+<p>Подбор • Проверка • Выкуп • Доставка по России</p>
+
+<a class="btn" href="https://t.me/maksprovdk">
+Рассчитать стоимость
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<h2>О нас</h2>
+
+<p style="max-width:700px;margin:auto;text-align:center">
+
+MaxProVdk — компания из Владивостока,
+которая занимается подбором и доставкой
+автомобилей из Китая и Японии.
+
+Мы работаем напрямую с поставщиками
+и аукционами, поэтому наши клиенты
+покупают автомобили дешевле рынка РФ.
+
+</p>
+
+</section>
+
+<!-- CLIENT ORDERS -->
+
+<section class="section" id="orders">
+
+<h2>Заказы клиентов</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="elantra.jpg" onclick="openImg(this.src)">
+<div class="card-body">
+<h3>Hyundai Elantra</h3>
+<p>2021 год</p>
+<p class="price">1 350 000 ₽</p>
+</div>
+</div>
+
+<div class="card">
+<img src="tayron.jpg" onclick="openImg(this.src)">
+<div class="card-body">
+<h3>Volkswagen Tayron</h3>
+<p>2022 год</p>
+<p class="price">2 200 000 ₽</p>
+</div>
+</div>
+
+<div class="card">
+<img src="vezel.jpg" onclick="openImg(this.src)">
+<div class="card-body">
+<h3>Honda Vezel</h3>
+<p>2018 год</p>
+<p class="price">1 800 000 ₽</p>
+</div>
+</div>
+
+<div class="card">
+<img src="binrui.jpg" onclick="openImg(this.src)">
+<div class="card-body">
+<h3>Geely Binrui</h3>
+<p>2021 год</p>
+<p class="price">1 000 000 ₽</p>
+</div>
+</div>
+
+<div class="card">
+<img src="fielder.jpg" onclick="openImg(this.src)">
+<div class="card-body">
+<h3>Toyota Corolla Fielder</h3>
+<p>2022 год</p>
+<p class="price">1 300 000 ₽</p>
+</div>
+</div>
+
+<div class="card">
+<img src="sienta.jpg" onclick="openImg(this.src)">
+<div class="card-body">
+<h3>Toyota Sienta</h3>
+<p>2019 год</p>
+<p class="price">1 060 000 ₽</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- OFFERS -->
+
+<section class="section" id="offers">
+
+<h2>Авто на заказ</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="carousel">
+<img src="cx50-1.jpg" id="cx50">
+<button class="prev" onclick="prev('cx50',['cx50-1.jpg','cx50-2.jpg','cx50-3.jpg'])">‹</button>
+<button class="next" onclick="next('cx50',['cx50-1.jpg','cx50-2.jpg','cx50-3.jpg'])">›</button>
+</div>
+<div class="card-body">
+<h3>Mazda CX-50</h3>
+<p class="price">3 150 000 ₽</p>
+<p>Современный кроссовер с мощным двигателем и высоким уровнем комфорта.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="carousel">
+<img src="h6-1.jpg" id="h6">
+<button class="prev" onclick="prev('h6',['h6-1.jpg','h6-2.jpg','h6-3.jpg'])">‹</button>
+<button class="next" onclick="next('h6',['h6-1.jpg','h6-2.jpg','h6-3.jpg'])">›</button>
+</div>
+<div class="card-body">
+<h3>Haval H6</h3>
+<p class="price">2 350 000 ₽</p>
+<p>Большой семейный кроссовер с современными системами безопасности.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="carousel">
+<img src="octavia-1.jpg" id="octavia">
+<button class="prev" onclick="prev('octavia',['octavia-1.jpg','octavia-2.jpg','octavia-3.jpg'])">‹</button>
+<button class="next" onclick="next('octavia',['octavia-1.jpg','octavia-2.jpg','octavia-3.jpg'])">›</button>
+</div>
+<div class="card-body">
+<h3>Skoda Octavia</h3>
+<p class="price">2 250 000 ₽</p>
+<p>Комфортный седан с большим багажником и отличной управляемостью.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="section" id="reviews">
+
+<h2>Отзывы клиентов</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-body">
+<p>⭐⭐⭐⭐⭐</p>
+<p>Заказывал Toyota Sienta из Японии. Подобрали отличный вариант, сопровождение прозрачное и понятное.</p>
+<p><b>Андрей</b></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<p>⭐⭐⭐⭐⭐</p>
+<p>Покупал Honda StepWagon. Всё прошло спокойно, помогли подобрать машину и сопровождали до получения.</p>
+<p><b>Николай</b></p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-body">
+<p>⭐⭐⭐⭐⭐</p>
+<p>Нашли автомобиль под наши требования. Всегда были на связи и отвечали на все вопросы.</p>
+<p><b>Марина</b></p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>Телефон: +7 914 970 44 14</p>
+
+<p>Telegram: @maksprovdk</p>
+
+<p>Instagram: maxprovdk</p>
+
+<p>Владивосток, Россия</p>
+
+<p style="color:#888;margin-top:15px">
+© 2026 MaxProVdk
+</p>
+
+</footer>
+
+<a class="telegram" href="https://t.me/maksprovdk">
+Telegram
+</a>
+
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+function openImg(src){
+document.getElementById("lightbox").style.display="flex"
+document.getElementById("lightbox-img").src=src
+}
+
+function closeImg(){
+document.getElementById("lightbox").style.display="none"
+}
+
+function next(id,arr){
+let img=document.getElementById(id)
+let index=arr.indexOf(img.src.split('/').pop())
+index=(index+1)%arr.length
+img.src=arr[index]
+}
+
+function prev(id,arr){
+let img=document.getElementById(id)
+let index=arr.indexOf(img.src.split('/').pop())
+index=(index-1+arr.length)%arr.length
+img.src=arr[index]
+}
+
+</script>
+
+</body>
+</html>
