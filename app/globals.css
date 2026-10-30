@@ -25,7 +25,7 @@ button { font: inherit; }
   position: absolute;
   z-index: -3;
   inset: 0;
-  background-image: url("/hero.jpg.jpg");
+  background-image: url("https://raw.githubusercontent.com/ksyshan2011-dotcom/maxprovdk/premium-hero/hero.jpg.jpg");
   background-size: cover;
   background-position: center 54%;
   transform: scale(1.025);
